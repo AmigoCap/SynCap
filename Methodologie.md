@@ -1,7 +1,7 @@
 # Méthodologie
 
 ## Mouvement d'un stylo qui dessine un cercle
-- Capture et reconstructon du mouvement avec deux capteurs : MOCAP et Accéléromètres
+- Capture et reconstruction du mouvement avec deux capteurs : MOCAP et Accéléromètres
 
 ### 1. Calibration
 - Calibration des six cameras du MOCAP en utilisant la croix de calibration.
@@ -16,10 +16,10 @@ que le mouvement des capteurssoit seulement dans un plan parallèle au plan de l
 ### Exportation des données
 - Exporter les données acquies avec les deux capteurs dans le format .cdv (legible par Excel par exemple)
 
-### Reconstruction du mouviment
+### Reconstruction du mouvement
 - Utilisant les données exportées et la programmation python, reconstruir la trajectoire mouvement à partir des données acquies par
 les deux capteurs utilisés.
 
-### Analise de la experimentation
+### Analyse de l'expérimentation
 - Comparer les deux trajectoires reconstruites pour analyser la précision des trajectoires reconstruites par rapport à la realité
 marquée sur la feuille de dessin utilisée.
