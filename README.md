@@ -4,6 +4,6 @@ Repértoire du projet d'Application en Recherche PAr 146 : Benchmark et analyse 
 
 Dans ce repértoire, vous trouverez :
 
-* [Avancement.md](SynCap/Avancement.md) : point d'avancement du projet (mise à jour à chaque semaine)
-* [CR_reunions.md](SynCap/CR_reunions.md) : compte-rendu des réunions
-* [Methodologie.md](SynCap/Methodologie.md) : méthodologie à utiliser pendant les séances de capture de mouvements
+* [Avancement.md](https://github.com/AmigoCap/SynCap/blob/master/Avancement.md) : point d'avancement du projet (mise à jour à chaque semaine)
+* [CR_reunions.md](https://github.com/AmigoCap/SynCap/blob/master/CR_reunions.md) : compte-rendu des réunions
+* [Methodologie.md](https://github.com/AmigoCap/SynCap/blob/master/Methodologie.md) : méthodologie à utiliser pendant les séances de capture de mouvements
