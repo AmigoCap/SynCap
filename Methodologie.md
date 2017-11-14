@@ -18,7 +18,7 @@ que le mouvement des capteurssoit seulement dans un plan parallèle au plan de l
 - Exporter les données acquies avec les deux capteurs dans le format .cdv (legible par Excel par exemple).
 
 ### Reconstruction du mouvement
-- Utilisant les données exportées et la programmation python, reconstruir la trajectoire mouvement à partir des données acquies par
+- Utilisant les données exportées et la programmation python, reconstruir la trajectoire mouvement à partir des données acquises par
 les deux capteurs utilisés.
 
 ### Analyse de l'expérimentation
