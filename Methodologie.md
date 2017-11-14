@@ -6,7 +6,7 @@
 
 ### 1. Calibration
 - Calibration des six cameras du MOCAP en utilisant la croix de calibration.
-- On n'aura pas le temps pour faire la calibration du senseur Shimmer (Accéléromètre avant le RVP-1.
+- Calibration d'un senseur Shimmer (Accéléromètre) en utilisant le logicial le logiciel Shimmer 9DoF Calibration.
 
 ### 2. Acquisition de données 
 - En posant un reflecteur et un senseur Shimmer sur un stylo, capturer les données avec les deux capteurs de façon simultannée
