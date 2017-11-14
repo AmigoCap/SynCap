@@ -14,7 +14,7 @@ que le mouvement des capteurssoit seulement dans un plan parallèle au plan de l
 - Realizer le mouvement du stylo de façon qu'il soit visible pour tous les six cameras pour assurer la bonne reconstrution du mouviment MOCAP.
 
 ### Exportation des données
--Exporter les données acquies avec les deux capteurs dans le format .cdv (legible par Excel par exemple)
+- Exporter les données acquies avec les deux capteurs dans le format .cdv (legible par Excel par exemple)
 
 ### Reconstruction du mouviment
 - Utilisant les données exportées et la programmation python, reconstruir la trajectoire mouvement à partir des données acquies par
