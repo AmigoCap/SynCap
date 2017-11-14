@@ -1,7 +1,8 @@
 # Méthodologie
 
 ## Mouvement d'un stylo qui dessine un cercle
-- Capture et reconstruction du mouvement avec deux capteurs : MOCAP et Accéléromètres
+- Capture et reconstrution du mouvement 
+- Capteurs utilisés : MOCAP et Accéléromètre
 
 ### 1. Calibration
 - Calibration des six cameras du MOCAP en utilisant la croix de calibration.
