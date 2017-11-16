@@ -1,6 +1,25 @@
 # Compte-rendu
 Compilation des compte-rendus des réunions
 
+## Réunion du 7 novembre 2017
+* Réaliser une première capture de mouvement :
+  *  créer une méthodologie avant la capture
+  * choisir un mouvement simple (stylo qui dessine un cercle)
+  * visualiser les données brutes
+* Ne pas faire un planning temporel : définir combien de captures de données différentes, ce qu'on prévoit faire pensant le projet
+* Suivre la démarche : poser le problème -> capturer les données -> analyser les données -> poser un autre problème
+* Réaliser une *méthodologie* pour réaliser les captures de mouvement et pour comparer avec la capture précendente
+* À chaque nouvelle capture, ajouter un élement nouveau
+
+### RVP1
+* Réflechir sur les problématiques de comparaison du mouvement
+* Expliquer les différents capteurs, expliciter les capteurs qui nous sont intéressants
+* Expliquer le contexte (pourquoi c'est important)
+* Présenter une première capture d'un mouvement simple dans un environnement contrôlé
+* Expliciter les autres types de mouvement et les autres types de capteur auxquels on s'intéresse
+
+
+
 ## Réunion du 24 octobre 2017
 ### RVP1
 * Faire une présentation rapide du sujet (le conseiller ne connait pas encore notre projet)
