@@ -137,7 +137,42 @@ Pour vérifier la calibration, changez le "**Magnetometer format**" de **Uncalib
 
 colocar imagem aqui
 
+Cliquez sur "**Save MAG to Shimmer**" pour envoyer la calibration du magnetometer vers le shimmer. Le tableau de paramètres de calibration doit passer de bleu à gris. 
+De plus, si vous voulez enregistrer la calibration sur votre ordinateur, cliquez sur "**Save MAG to file**".
 
+
+NB : Après avoir fait tous les étapes de calibration, vous pouvez appuyer sur **Save ALL to file** pour enregistrer la calibration complète sur votre ordinateur. 
+
+
+### Data Analysis
+
+Maintenant, vous allez vérifier la justesse de la calibration. Appuyez sur **START**. 
+
+#### Accéléromètre
+Par défaut, vous devez avoir "Accelerometer" selectionné sur "Select Sensor". S'il n'est pas le cas, changez-le par "Accelerometer". Posez le shimmer avec l'axe x vers le haut. 
+
+foto retangulo em select sensor
+
+Vous devez observer dans le graphique que l'accélération pour cet axe est d'environ 10 m/s² (qui correspond à la pesanteur) et pour les axes y et z les accélérations sont nulles. 
+
+colocar imagem
+
+Répetez cette méthode de vérification de la pesanteur pour y et z. 
+
+#### Gyroscope
+
+Sélectionnez le gyroscope sur "Select Sensor". Si la calibration est correcte, le signaux sur le graphiques doivent être nuls quand le shimmer est stationnaire. 
+
+foto
+
+#### Magnetometer
+
+Sélectionnez le magnetometer sur "select sensor". 
+
+*terminar explicação (ver guia)*
 
 ## Utilisation
+
+Ouvrez l
+
 
