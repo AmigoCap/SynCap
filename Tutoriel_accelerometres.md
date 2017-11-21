@@ -234,7 +234,45 @@ foto
 
 ### Capture
 
+Disconnectez le shimmer de la base (sans l'éteindre). Appuyez sur le bouton orange pour lancer l'acquisition (le LED bleu va s'allumer à chaque seconde). 
 
+foto
+
+Pour arrêter l'acquisition, appuyez à nouveau sur le bouton orange. Le LED vert va s'allumer à chaque 2 secondes. 
+
+### Importation et Exportation
+
+Reconnectez le shimmer à la base. Cliquez sur **Import**. 
+
+foto
+
+Attendez la fin du *Scanning* et ensuite cliquez sur **NEXT**. 
+
+foto
+
+Sélectionnez l'essai que vous voulez importer du shimmer. Cliquez sur la flèche pour passer l'essai à la deuxième colonne. 
+
+foto
+
+Sélectionnez les données que vous voulez traiter dans la prochaine étape et puis cliquez sur **NEXT**. 
+
+foto
+
+Attendez la fin de l'importation et cliquez sur **DONE**. 
+
+foto
+
+Une nouvelle fênetre s'ouvrira. Vous pouvez l'ouvrir aussi à partir du menu qui apparaît lors de l'ouverture du programme en cliquant sur *Manage data*. 
+
+Sélectionnez les données à exporter et puis cliquez sur la flèche en bas. 
+
+foto
+
+Vous devez maintenant choisir comment vous voulez exporter les données. Si vous choisissiez "Formatted Local" sur Timestamp Format, vous auriez vos données avec l'heure correspondante. 
+
+foto
+
+Cliquez sur **EXPORT** et enregistrez le fichier sur votre ordinateur. 
 
 
 
