@@ -2,10 +2,13 @@
 
 NB : Ce tutoriel sert à l'utilisation du shimmer3, les autres versions ne seront pas adaptées. 
 
-Pour pouvoir utiliser les accéléromètres, vous devez avoir installé le programme *Consensys* sur votre ordinateur (disponible pour téléchargement [ici](http://www.shimmersensing.com/support/wireless-sensor-networks-download/). 
+Pour pouvoir utiliser les accéléromètres, vous devez avoir installé le programme *Consensys* sur votre ordinateur (disponible pour téléchargement [ici](http://www.shimmersensing.com/support/wireless-sensor-networks-download/). Utilisez le [User Guide]() pour l'installer.
 
-Branchez le cable de la base à une prise et ensuite branchez le cable à la base (suivez bien cette ordre). 
+Branchez le cable de la base à une prise et ensuite branchez le cable à la base (suivez bien cette ordre). Branchez la base à l'ordinateur avec le cable USB.  
 Pour allumer un des accéléromètres, appuyez sur le boutton orange. Le led 
+
+NB : Pour utiliser plusieurs capteurs, il faut avoir une licence pour le ConsensysPRO. 
+
 
 ## Calibration
 
@@ -173,6 +176,69 @@ Sélectionnez le magnetometer sur "select sensor".
 
 ## Utilisation
 
-Ouvrez l
+Ouvrez le programme *Consensys*. Sur le menu qui apparaît, vous devez cliquer sur **Manage Devices**. 
+
+foto
+
+La fênetre va ressembler à :
+
+foto (base sem capteur)
+
+Connectez le shimmer que vous voulez utiliser à la base. Il doit être allumé avant d'être branché. Attendez le shimmer apparaître sur l'image de la base. Cela veut dire que le programme a bien identifié le shimmer.
+
+foto (base + shimmer)
+
+Quand le programme ne reconnait pas le shimmer, un capteur en rouge apparaît au lieu de l'image du shimmer. 
+
+foto (base + troco rouge)
+
+Couchez la case pour sélectionner tous les shimmers que vous voulez configurer. 
+
+foto 
+
+Cliquez sur **FIRMWARE**. Une fênetre va apparaître. Vous pouvez donc sélectionner la méthode de capture (enregistrement dans le SD card ou *streaming* par Bluetooth). 
+
+**IMPORTANT !** Si votre shimmer est déjà calibré, cochez la case à côte de **PROGRAM**. 
+
+foto
+
+Cliquez sur PROGRAM. Une nouvelle fênetre va apparaître. Attendez jusqu'à ce que le status soit 100% complet. Cliquez ensuite sur **DONE**. 
+
+foto
+
+Vous pouvez vérifier si le firmware a été bien installé. 
+
+foto
+
+Cliquez sur **CONFIGURATION**.
+
+Sur l'onglet **SENSORS** :
+* Vous pouvez insérer le nom de l'essai si vous voulez.
+* Vous devez sélectionner la méthode d'activation et d'arret de la capture de données. 
+* Si vous le souhaitez, vous pouvez déterminer un temps d'*auto stop*.
+* Vous pouvez aussi donner un nom pour le shimmer
+* Choisissez la fréquence du shimmer
+* Sélectionnez quel type de capteur vous voulez utiliser (accéléromètres, gyroscope, etc)
+
+foto com as zonas e as diferentes cores
+
+Sur l'onglet **ALGORITHMS** : 
+* Sélectionnez l'algorithme que vous voulez utiliser. Il faut choisir 9DOF pour le Shimmer3 IMU.
+
+Sur l'onglet **CALIBRATION** : 
+* Vérifiez que la calibration correspond à celle réalisé auparavant. 
+
+Cliquez sur **WRITE CONFIG**. Attendez que la configuration soit complète et ciquez sur **NEXT**. 
+
+foto
+
+### Capture
+
+
+
+
+
+
+
 
 
