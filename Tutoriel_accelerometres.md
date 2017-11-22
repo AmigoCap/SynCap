@@ -93,9 +93,7 @@ Cliquez sur **START**.
 
 Posez le shimmer sur une superfice planne. Cliquez sur **stationnaire**. Ne touchez pas au shimmer ni à la surface, il ne doit avoir aucun mouvement ni vibration. Attendez jusqu'à la disparition du **wait**. 
 
-![](images/calibration_gyroscope_stat.jpg)
-foto 7 do bala
-
+![](images/1calibration_gyroscope_1.jpg)
 
 Maintenant on va commencer à rotationner le shimmer. 
 
@@ -115,8 +113,12 @@ Vous devez répeter la rotation pour les trois axes. Vous pouvez réaliser les r
 
 Cliquez sur **STOP** en rouge pour arreter la transmission de données. 
 
+![](images/1calibration_gyroscope_2.jpg)
+
 Après avoir fait la rotation pour les trois axes, cliquez sur "**Save GIRO to Shimmer**" pour envoyer la calibration du gyroscope vers le shimmer. Le tableau de paramètres de calibration doit passer de bleu à gris. 
 De plus, si vous voulez enregistrer la calibration sur votre ordinateur, cliquez sur "**Save GIRO to file**".
+
+![](images/1calibration_gyroscope_3.jpg)
 
 ### Calibration du magnetomètre 
 
@@ -124,21 +126,30 @@ Sélectionnez l'onglet "Magnetometer".
 
 Vous pouvez aussi sélectionner la gamme du magnetomètre selon votre application. 
 
-![](images/calibration_selection_onglet_magnetometer.jpg)
+![](images/1calibration_mag_1.jpg)
 
-Cliquez sur **START**. Cliquez sur **Rotation XYZ**. 
+Cliquez sur **START**. Cliquez sur **Rotation XYZ**.
+
+![](images/1calibration_mag_2.jpg)
 
 Tournez le shimmer aléatoirement dans toutes les directions possibles. Vous devez obtenir progressivement dans les trois graphiques qui apparaîsent quelque chose qui ressemble de plus en plus à une sphère. Vous pouvez vous arreter quand les trois graphiques semblent beaucoup à un sphère (cf. images ci-dessous). 
 
-*botar muitas imagens aqui*
+![](images/1calibration_mag_3.jpg)
+![](images/1calibration_mag_4.jpg)
+![](images/1calibration_mag_5.jpg)
+
 
 Quand vous trouvez que la calibration est suffisante, appuyez sur **Press to Stop**. 
 
 Cliquez sur **STOP**. 
 
-Pour vérifier la calibration, changez le "**Magnetometer format**" de **Uncalibrated** par **Calibrated**. Si la calibration est bonnne, les graphiques doivent être des cercles presque parfaits centrés en (0,0,0). 
+Pour vérifier la calibration, changez le "**Magnetometer format**" de **Uncalibrated** par **Calibrated**. 
 
-colocar imagem aqui
+![](images/1calibration_mag_6.jpg)
+
+Si la calibration est bonnne, les graphiques doivent être des cercles presque parfaits centrés en (0,0,0). 
+
+![](images/1calibration_mag_7.jpg)
 
 Cliquez sur "**Save MAG to Shimmer**" pour envoyer la calibration du magnetometer vers le shimmer. Le tableau de paramètres de calibration doit passer de bleu à gris. 
 De plus, si vous voulez enregistrer la calibration sur votre ordinateur, cliquez sur "**Save MAG to file**".
@@ -149,16 +160,17 @@ NB : Après avoir fait tous les étapes de calibration, vous pouvez appuyer sur 
 
 ### Data Analysis
 
-Maintenant, vous allez vérifier la justesse de la calibration. Appuyez sur **START**. 
+Maintenant, vous allez vérifier la justesse de la calibration. Sélectionnez l'onglet **Data Analysis**. Appuyez sur **START**. 
+
 
 #### Accéléromètre
 Par défaut, vous devez avoir "Accelerometer" selectionné sur "Select Sensor". S'il n'est pas le cas, changez-le par "Accelerometer". Posez le shimmer avec l'axe x vers le haut. 
 
-foto retangulo em select sensor
+![](images/1calibration_data_1.jpg)
 
 Vous devez observer dans le graphique que l'accélération pour cet axe est d'environ 10 m/s² (qui correspond à la pesanteur) et pour les axes y et z les accélérations sont nulles. 
 
-colocar imagem
+![](images/1calibration_data_2.jpg)
 
 Répetez cette méthode de vérification de la pesanteur pour y et z. 
 
@@ -166,7 +178,7 @@ Répetez cette méthode de vérification de la pesanteur pour y et z.
 
 Sélectionnez le gyroscope sur "Select Sensor". Si la calibration est correcte, le signaux sur le graphiques doivent être nuls quand le shimmer est stationnaire. 
 
-foto
+![](images/1calibration_data_3.jpg)
 
 #### Magnetometer
 
@@ -178,65 +190,74 @@ Sélectionnez le magnetometer sur "select sensor".
 
 Ouvrez le programme *Consensys*. Sur le menu qui apparaît, vous devez cliquer sur **Manage Devices**. 
 
-foto
+![](images/0utilisation_01.jpg)
+
 
 La fênetre va ressembler à :
 
-foto (base sem capteur)
+![](images/0utilisation_02.jpg)
 
-Connectez le shimmer que vous voulez utiliser à la base. Il doit être allumé avant d'être branché. Attendez le shimmer apparaître sur l'image de la base. Cela veut dire que le programme a bien identifié le shimmer.
+Connectez le shimmer que vous voulez utiliser à la base. Il doit être allumé avant d'être branché. 
+![](images/0utilisation_03.jpg)
 
-foto (base + shimmer)
+Attendez le shimmer apparaître sur l'image de la base. Cela veut dire que le programme a bien identifié le shimmer.
+
+![](images/0utilisation_04.jpg)
 
 Quand le programme ne reconnait pas le shimmer, un capteur en rouge apparaît au lieu de l'image du shimmer. 
 
-foto (base + troco rouge)
+![](images/0utilisation_05.jpg)
 
-Couchez la case pour sélectionner tous les shimmers que vous voulez configurer. 
+Couchez la case pour sélectionner tous les shimmers que vous voulez configurer. Cliquez sur **FIRMWARE**. 
 
-foto 
 
-Cliquez sur **FIRMWARE**. Une fênetre va apparaître. Vous pouvez donc sélectionner la méthode de capture (enregistrement dans le SD card ou *streaming* par Bluetooth). 
+![](images/0utilisation_06.jpg)
+
+Une fênetre va apparaître. Vous pouvez donc sélectionner la méthode de capture (enregistrement dans le SD card ou *streaming* par Bluetooth). 
 
 **IMPORTANT !** Si votre shimmer est déjà calibré, cochez la case à côte de **PROGRAM**. 
 
-foto
+![](images/0utilisation_07.jpg)
 
 Cliquez sur PROGRAM. Une nouvelle fênetre va apparaître. Attendez jusqu'à ce que le status soit 100% complet. Cliquez ensuite sur **DONE**. 
 
-foto
+![](images/0utilisation_08.jpg)
 
-Vous pouvez vérifier si le firmware a été bien installé. 
+Vous pouvez vérifier si le firmware a été bien installé. Cliquez sur **CONFIGURE**.
 
-foto
+![](images/0utilisation_07a.jpg)
 
-Cliquez sur **CONFIGURATION**.
 
-Sur l'onglet **SENSORS** :
-* Vous pouvez insérer le nom de l'essai si vous voulez.
-* Vous devez sélectionner la méthode d'activation et d'arret de la capture de données. 
-* Si vous le souhaitez, vous pouvez déterminer un temps d'*auto stop*.
-* Vous pouvez aussi donner un nom pour le shimmer
-* Choisissez la fréquence du shimmer
-* Sélectionnez quel type de capteur vous voulez utiliser (accéléromètres, gyroscope, etc)
+Sur l'onglet **SENSORS** (en rouge) :
+* Vous pouvez insérer le nom de l'essai si vous voulez (en jaune)
+* Vous devez sélectionner la méthode d'activation et d'arret de la capture de données (en vert)
+* Vous pouvez aussi donner un nom pour le shimmer (en noir)
+* Choisissez la fréquence du shimmer (en bleu)
+* Sélectionnez quel type de capteur vous voulez utiliser (accéléromètres, gyroscope, etc) (en rose)
 
-foto com as zonas e as diferentes cores
+![](images/0utilisation_09.jpg)
+
 
 Sur l'onglet **ALGORITHMS** : 
 * Sélectionnez l'algorithme que vous voulez utiliser. Il faut choisir 9DOF pour le Shimmer3 IMU.
 
+![](images/0utilisation_10.jpg)
+
 Sur l'onglet **CALIBRATION** : 
-* Vérifiez que la calibration correspond à celle réalisé auparavant. 
+* Vérifiez que la calibration correspond à celle réalisé auparavant. Cliquez sur **WRITE CONFIG**.
 
-Cliquez sur **WRITE CONFIG**. Attendez que la configuration soit complète et ciquez sur **NEXT**. 
+![](images/0utilisation_11.jpg)
 
-foto
+ Attendez que la configuration soit complète et ciquez sur **NEXT**. 
+ 
+![](images/0utilisation_12.jpg)
+
 
 ### Capture
 
 Disconnectez le shimmer de la base (sans l'éteindre). Appuyez sur le bouton orange pour lancer l'acquisition (le LED bleu va s'allumer à chaque seconde). 
 
-foto
+![](images/0utilisation_13.jpg)
 
 Pour arrêter l'acquisition, appuyez à nouveau sur le bouton orange. Le LED vert va s'allumer à chaque 2 secondes. 
 
@@ -248,29 +269,29 @@ foto
 
 Attendez la fin du *Scanning* et ensuite cliquez sur **NEXT**. 
 
-foto
+![](images/0utilisation_14.jpg)
 
 Sélectionnez l'essai que vous voulez importer du shimmer. Cliquez sur la flèche pour passer l'essai à la deuxième colonne. 
 
-foto
+![](images/0utilisation_15.jpg)
 
 Sélectionnez les données que vous voulez traiter dans la prochaine étape et puis cliquez sur **NEXT**. 
 
-foto
+![](images/0utilisation_17.jpg)
 
 Attendez la fin de l'importation et cliquez sur **DONE**. 
 
-foto
+![](images/0utilisation_18.jpg)
 
 Une nouvelle fênetre s'ouvrira. Vous pouvez l'ouvrir aussi à partir du menu qui apparaît lors de l'ouverture du programme en cliquant sur *Manage data*. 
 
 Sélectionnez les données à exporter et puis cliquez sur la flèche en bas. 
 
-foto
+![](images/0utilisation_19.jpg)
 
 Vous devez maintenant choisir comment vous voulez exporter les données. Si vous choisissiez "Formatted Local" sur Timestamp Format, vous auriez vos données avec l'heure correspondante. 
 
-foto
+![](images/0utilisation_20.jpg)
 
 Cliquez sur **EXPORT** et enregistrez le fichier sur votre ordinateur. 
 
