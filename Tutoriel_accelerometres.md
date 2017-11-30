@@ -2,7 +2,7 @@
 
 NB : Ce tutoriel sert à l'utilisation du shimmer3, les autres versions ne seront pas adaptées. 
 
-Pour pouvoir utiliser les accéléromètres, vous devez avoir installé le programme *Consensys* sur votre ordinateur (disponible pour téléchargement [ici](http://www.shimmersensing.com/support/wireless-sensor-networks-download/). Utilisez le [User Guide]() pour l'installer.
+Pour pouvoir utiliser les accéléromètres, vous devez avoir installé le programme *Consensys* sur votre ordinateur (disponible pour téléchargement [ici](http://www.shimmersensing.com/support/wireless-sensor-networks-download/). Utilisez le [User Guide](Consensys_User_Guide_rev1.4a.pdf) pour l'installer.
 
 Branchez le cable de la base à une prise et ensuite branchez le cable à la base (suivez bien cette ordre). Branchez la base à l'ordinateur avec le cable USB.  
 Pour allumer un des accéléromètres, appuyez sur le boutton orange. Le led 
