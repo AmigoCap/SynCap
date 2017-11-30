@@ -1,6 +1,9 @@
 # Point d'avancement
 Description des tâches réalisés
 
+# 21 novembre 2017
+* Création du [tutoriel des accéléromètres](https://github.com/AmigoCap/SynCap/blob/master/Tutoriel_accelerometres.md) (calibration et usage) 
+
 # 14 novembre 2017
 * Calibration d'un accéléromètre pour première capture ([tutoriel Youtube](https://www.youtube.com/watch?v=aI2WDecTtfs))
 * Capture du mouvement d'un stylo qui dessine un cercle ([méthodologie](https://github.com/AmigoCap/SynCap/blob/master/Methodologie.md))
