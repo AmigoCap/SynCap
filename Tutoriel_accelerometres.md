@@ -265,7 +265,7 @@ Pour arrêter l'acquisition, appuyez à nouveau sur le bouton orange. Le LED ver
 
 Reconnectez le shimmer à la base. Cliquez sur **Import**. 
 
-foto
+![](images/0utilisation_importation.jpg)
 
 Attendez la fin du *Scanning* et ensuite cliquez sur **NEXT**. 
 
