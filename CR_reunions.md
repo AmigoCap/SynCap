@@ -1,6 +1,23 @@
 # Compte-rendu
 Compilation des compte-rendus des réunions
 
+## Réunion du 13 décembre 2017
+* Commencer par idéntifier un problème simple qu'on veut étudier (cf. article [Data Mining]()) comme la correspondance de trajectoires
+* A partir d'un problème simple, générer des données pour pouvoir implémenter le code (voir les librairies nécessaires)
+* Dans le cas du *carré* : à partir d'un carré théorique, générer tranjectoires aléatoires (à la main, en utilisant random ...) en réalisant une segmentation (trajectoire théorique -> segmentation -> génération de trajectoire aléatoire)
+[x,y,t,id]
+* Calcul des distances (quelle trajectoire est la plus proche de la théorique ?)
+* Problème des différentes segmentations -> comment faire pour synchroniser les données et les rélier à la trajectoire initiale ?
+* A faire : 
+ * Définir des points d'intêret d'un modèle
+ * Définir un indicateur de taux d'erreur
+ * Corréction de bruit (comment faire pour enléver le bruit et le corriger)
+ * ségmentation
+ * réduire le taux d'erreur
+* Problème possible : corriger le trajectoire pour qu'elle passe par une route possible
+* Définir différentes méthodes de synchronisation et les comparer
+* Tester aussi avec d'autres formes géométriques (tester la robustesse)
+
 ## Réunion du 7 novembre 2017
 * Réaliser une première capture de mouvement :
   *  créer une méthodologie avant la capture
