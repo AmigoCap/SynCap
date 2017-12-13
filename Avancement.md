@@ -1,6 +1,10 @@
 # Point d'avancement
 Description des tâches réalisés
 
+# 5 novembre 2017 
+* Capture du mouvement d'un stylo qui dessine un carré 
+* Exportation des données du [MoCap](https://github.com/AmigoCap/SynCap/blob/master/donnees/carre/MoCap_Carre.csv) et du [Accéléromètre](https://github.com/AmigoCap/SynCap/blob/master/donnees/carre/Accelerometre_Carre.csv)
+
 # 21 novembre 2017
 * Création du [tutoriel des accéléromètres](https://github.com/AmigoCap/SynCap/blob/master/Tutoriel_accelerometres.md) (calibration et usage) 
 
