@@ -118,8 +118,8 @@ def verif_limites(P,l,c):
     return True
 
 def numerical_grid(P):
-    l=P[-1][0]+1
-    c=P[-1][1]+1
+    l=P[-1][1]+1
+    c=P[-1][0]+1
     grid=[]
     for i in range(l):
         ligne=[]
@@ -128,7 +128,7 @@ def numerical_grid(P):
         grid.append(ligne)
     
     for i in P:
-        grid[i[0]][i[1]]=1
+        grid[i[1]][i[0]]=1
         
     return grid
     
@@ -146,6 +146,7 @@ def draw_grid(Pgrid):
     fig = plt.figure()
     ax=fig.add_subplot(1,1,1)
     ax.set_aspect(20)
+    ax.xaxis.tick_top()
     
     #ax.grid(color='k',linestyle='-',linewidth=2)
     
@@ -174,6 +175,7 @@ def main():
             traj2.append([x,y])
     
     cout,P,distances = dtw(traj1,traj2)
+    print(len(P))
     Pgrid=numerical_grid(P)
     draw_grid(Pgrid)
     print('J =',cout)
