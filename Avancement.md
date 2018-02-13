@@ -1,6 +1,11 @@
 # Point d'avancement
 Description des tâches réalisés
 
+# 13 Février 2018
+* Création d'un code python plus générique pour la génération de trajectoires avec la possibilité d'ajouter un bruit gaussien ou impulsif.
+* Recherche d'une méthode plus adaptée pour notre projet. Le DTW n'est pas utilisable pour des données multimodals.
+* L'ajout des lignes de recalage entre les points synchronisés des trajectoires pour pouvoir mieux visualiser et analyser la synchronisation.
+
 # 19 décembre 2017
 * Géneration des données de trajectoire pour pouvoir les analyser ([code python]() et [fichier txt]())
 * Comparaison des trajectoires générées avec la trajectoire théorique (distance euclidienne) (voir rapport_partiel)
