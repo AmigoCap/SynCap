@@ -1,7 +1,6 @@
 '''
 Génération de trajectoires aléatoires et de réference
 '''
-
 import csv
 import math
 import random
@@ -74,14 +73,36 @@ def aleatoire(axe):
 def bruit(choix,dim):
     if not choix:
         if dim==2: 
-            return [0,0]
+            return [0,0];
         else:
-            return 0            
+            return 0;           
     else:
         if dim==2: 
-            return [5,1]
+            '''
+            Bruit Gaussien
+            '''
+#            sigma = 3.0;
+#            U1 = random.random();
+#            U2 = random.random();
+#            b1 = sigma*math.sqrt(-2*math.log(U1))*math.cos(2*math.pi*U2) ;
+#            
+#            U1 = random.random();
+#            U2 = random.random();
+#            b2 = sigma*math.sqrt(-2*math.log(U1))*math.cos(2*math.pi*U2) ;
+#            return [b1,b2];
+            
+            '''
+            Bruit Impulsif
+            '''            
+            prob = random.randint(1,100);
+            if prob>90:
+                nmax = random.randint(30,50);
+                nmin = random.randint(-50,-30);
+                return [int(random.randint(nmin,nmax)),int(random.randint(nmin,nmax))];
+            else:
+                return [0,0];
         else:
-            return 0  
+            return 0;
 
 def export(nom,trajectoire):
     '''
@@ -118,6 +139,9 @@ def rectangle(l,h,k,n):
     return([x,y])
             
 def graphique(traj):
+    '''
+    Affichage Graphique d'une trajectoire
+    '''
     if type(traj[0])!=list:
         x=traj
         y=list(range(0,len(traj)))
@@ -127,14 +151,14 @@ def graphique(traj):
         for i in traj:
             x.append(i[0])
             y.append(i[1])
-    plt.scatter(y,x)
+    plt.scatter(x,y)
             
 
 
 def main():  
     axes=["x","y"]
     ref=traj_reference(200)
-    bruit=False
+    bruit=True;
     print(ref)
     alt=traj_aleatoire(100,bruit,axes)
     graphique(ref)
