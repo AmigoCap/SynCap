@@ -153,7 +153,7 @@ def draw_grid(Pgrid):
     plt.imshow(matrix,interpolation='none',cmap=my_cmap)
     plt.show
     
-def draw_traj_rec(traj1,traj2):
+def draw_traj_rec(traj1,traj2,P):
     '''
     Affichage du recalage des trajectoires
     '''
@@ -176,7 +176,7 @@ def draw_traj_rec(traj1,traj2):
     plt.figure()
     for i in range(len(traj1)):
         xt1[i],yt1[i]=(traj1[i]);
-    plt.plot(xt1,yt1,'bo-')
+    plt.plot(xt1,yt1,'bo')
                 
     #Affichage trajectoire 2 en rouge
     for i in range(len(traj2)):
@@ -220,7 +220,7 @@ def main():
     Pgrid=numerical_grid(P)
     draw_grid(Pgrid)
     print('J =',cout)
-    draw_traj_rec(traj1,traj2)
+    draw_traj_rec(traj1,traj2,P)
     
     
 main()

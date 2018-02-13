@@ -62,9 +62,9 @@ def aleatoire(axe):
     aleat=[]
     for i in axe:
         if i=="x":
-            aleat.append (random.uniform(-1, 1))
+            aleat.append (random.uniform(-5, 5))
         elif i=="y":
-            aleat.append (random.uniform(-1, 1))
+            aleat.append (random.uniform(-5, 5))
         elif i=="z":
             aleat.append (random.uniform(-5, 5))
         else : 
@@ -79,7 +79,7 @@ def bruit(choix,dim):
             return 0            
     else:
         if dim==2: 
-            return [1,1]
+            return [5,1]
         else:
             return 0  
 
@@ -134,8 +134,9 @@ def graphique(traj):
 def main():  
     axes=["x","y"]
     ref=traj_reference(200)
+    bruit=False
     print(ref)
-    alt=traj_aleatoire(100,False,axes)
+    alt=traj_aleatoire(100,bruit,axes)
     graphique(ref)
     graphique(alt)
     export("ref",ref)
