@@ -1,9 +1,9 @@
-#
+'''Méthode DTW avec recalage des trajectoires générées.'''
 
 import csv
 import math 
 import matplotlib.pyplot as plt
-from matplotlib import colors
+import matplotlib as mtp
 import numpy as np
 
 def distance(a,b):
@@ -139,9 +139,9 @@ def numerical_grid(P):
     
 def draw_grid(Pgrid):
     
-    matrix=numpy.matrix(Pgrid)
+    matrix=np.matrix(Pgrid)
 
-    my_cmap = matplotlib.colors.ListedColormap(['k','w'])
+    my_cmap = mtp.colors.ListedColormap(['k','w'])
     
     fig = plt.figure()
     ax=fig.add_subplot(1,1,1)
@@ -181,5 +181,42 @@ def main():
     print('J =',cout)
     
     
+    '''
+    Affichage du recalage des trajectoires
+    '''
+    
+    xt1=[]; 
+    yt1=[];
+    xt2=[];
+    yt2=[];
+    
+    for i in range(len(traj1)):
+        xt1.append(0);
+        yt1.append(0);
+    
+    for i in range(len(traj2)):
+        xt2.append(0);
+        yt2.append(0);
+        
+    #Affichage trajectoire en bleu
+    plt.figure()
+    for i in range(len(traj1)):
+        xt1[i],yt1[i]=(traj1[i]);
+    plt.plot(xt1,yt1,'bo-')
+                
+    #Affichage trajectoire 2 en rouge
+    for i in range(len(traj2)):
+        xt2[i],yt2[i]=traj2[i]
+    plt.plot(xt2,yt2,'ro-')
+            
+    #Recalage des points en noir
+    for i in range(len(P)):
+          i1,i2=P[i]
+          x1,y1 = traj1[i1]
+          x2,y2 = traj2[i2]
+          plt.plot([x1,x2],[y1,y2],'k-')
+          i=i+1;   
+    
+    plt.show
+           
 main()
-
