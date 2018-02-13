@@ -86,10 +86,13 @@ def main():
     
     print(ref)
     
-    with open("ref.csv","w",newline="") as f:  
-        writer=csv.writer(f,delimiter=',')
-        for i in ref:
-            writer.writerow(i)
+    
+#    with open("ref.csv","w",newline="") as f:  
+#        writer=csv.writer(f,delimiter=',')
+#        for i in ref:
+#            writer.writerow(i)
+    
+    export("ref",ref)
      
     
     with open("essai1.csv","w",newline="") as f:
@@ -102,5 +105,16 @@ def coord_trajec(tx,ty):
     for i in range (len(tx)):
         coord.append([tx[i],ty[i]])
     return coord
+
+def export(nom,trajectoire):
+    '''
+    Cette fonction reçoit le nom du fichier à exporter et la liste qui contient la trajectoire    
+    OBS : il faut fournir un str sans l'extension à la fin
+    '''
+    title=nom+".csv"
+    with open(title,"w",newline="") as f:  
+        writer=csv.writer(f,delimiter=',')
+        for i in trajectoire:
+            writer.writerow(i)
 
 main()
