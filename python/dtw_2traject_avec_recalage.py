@@ -152,38 +152,12 @@ def draw_grid(Pgrid):
     
     plt.imshow(matrix,interpolation='none',cmap=my_cmap)
     plt.show
-        
     
-def main():
-    
-    #import la trajectoire de réference
-    with open ("ref.csv","r") as csvfile:
-        traj1_file=csv.reader(csvfile)
-        traj1=[]
-        for row in traj1_file:
-            x=float(row[0])
-            y=float(row[1])
-            traj1.append([x,y])
-            
-    #import la trajectoire aleatoire 
-    with open ("essai1.csv","r") as csvfile:
-        traj2_file=csv.reader(csvfile)
-        traj2=[]
-        for row in traj2_file:
-            x=float(row[0])
-            y=float(row[1])
-            traj2.append([x,y])
-    
-    cout,P,distances = dtw(traj1,traj2)
-    print(len(P))
-    Pgrid=numerical_grid(P)
-    draw_grid(Pgrid)
-    print('J =',cout)
-    
-    
+def draw_traj_rec(traj1,traj2):
     '''
     Affichage du recalage des trajectoires
     '''
+    
     
     xt1=[]; 
     yt1=[];
@@ -219,4 +193,34 @@ def main():
     
     plt.show
            
+        
+    
+def main():
+    
+    #import la trajectoire de réference
+    with open ("ref.csv","r") as csvfile:
+        traj1_file=csv.reader(csvfile)
+        traj1=[]
+        for row in traj1_file:
+            x=float(row[0])
+            y=float(row[1])
+            traj1.append([x,y])
+            
+    #import la trajectoire aleatoire 
+    with open ("alt.csv","r") as csvfile:
+        traj2_file=csv.reader(csvfile)
+        traj2=[]
+        for row in traj2_file:
+            x=float(row[0])
+            y=float(row[1])
+            traj2.append([x,y])
+    
+    cout,P,distances = dtw(traj1,traj2)
+    print(len(P))
+    Pgrid=numerical_grid(P)
+    draw_grid(Pgrid)
+    print('J =',cout)
+    draw_traj_rec(traj1,traj2)
+    
+    
 main()
