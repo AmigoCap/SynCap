@@ -81,28 +81,28 @@ def bruit(choix,dim):
             '''
             Bruit Gaussien
             '''
-#            sigma = 3.0;
-#            U1 = random.random();
-#            U2 = random.random();
-#            b1 = sigma*math.sqrt(-2*math.log(U1))*math.cos(2*math.pi*U2) ;
-#            
-#            U1 = random.random();
-#            U2 = random.random();
-#            b2 = sigma*math.sqrt(-2*math.log(U1))*math.cos(2*math.pi*U2) ;
-#            return [b1,b2];
+            sigma = 3.0;
+            U1 = random.random();
+            U2 = random.random();
+            b1 = sigma*math.sqrt(-2*math.log(U1))*math.cos(2*math.pi*U2) ;
+            
+            U1 = random.random();
+            U2 = random.random();
+            b2 = sigma*math.sqrt(-2*math.log(U1))*math.cos(2*math.pi*U2) ;
+            return [b1,b2];
             
             '''
             Bruit Impulsif
             '''            
-            prob = random.randint(1,100);
-            if prob>90:
-                nmax = random.randint(30,50);
-                nmin = random.randint(-50,-30);
-                return [int(random.randint(nmin,nmax)),int(random.randint(nmin,nmax))];
-            else:
-                return [0,0];
-        else:
-            return 0;
+#            prob = random.randint(1,100);
+#            if prob>90:
+#                nmax = random.randint(30,50);
+#                nmin = random.randint(-50,-30);
+#                return [int(random.randint(nmin,nmax)),int(random.randint(nmin,nmax))];
+#            else:
+#                return [0,0];
+#        else:
+#            return 0;
 
 def export(nom,trajectoire):
     '''

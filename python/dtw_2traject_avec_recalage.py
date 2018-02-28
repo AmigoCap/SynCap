@@ -178,6 +178,7 @@ def draw_traj_rec(traj1,traj2,P):
         xt1[i],yt1[i]=(traj1[i]);
     plt.plot(xt1,yt1,'bo')
                 
+    
     #Affichage trajectoire 2 en rouge
     for i in range(len(traj2)):
         xt2[i],yt2[i]=traj2[i]
@@ -198,7 +199,7 @@ def draw_traj_rec(traj1,traj2,P):
 def main():
     
     #import la trajectoire de réference
-    with open ("ref.csv","r") as csvfile:
+    with open ("trajectoires_generees/02_dtw_bruit_gauss_ref.csv","r") as csvfile:
         traj1_file=csv.reader(csvfile)
         traj1=[]
         for row in traj1_file:
@@ -207,7 +208,7 @@ def main():
             traj1.append([x,y])
             
     #import la trajectoire aleatoire 
-    with open ("alt.csv","r") as csvfile:
+    with open ("trajectoires_generees/02_dtw_bruit_gauss_alt.csv","r") as csvfile:
         traj2_file=csv.reader(csvfile)
         traj2=[]
         for row in traj2_file:
