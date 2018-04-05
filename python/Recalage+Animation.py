@@ -1,6 +1,4 @@
 """
-Matplotlib Animation Example
-
 author: Jake Vanderplas
 email: vanderplas@astro.washington.edu
 website: http://jakevdp.github.com
@@ -283,7 +281,7 @@ def animate11(i):
     return line,
 
 # call the animator.  blit=True means only re-draw the parts that have changed.
-anim = animation.FuncAnimation(fig, animate11, init_func=init1,frames=200, interval=20, blit=False)
+anim = animation.FuncAnimation(fig, animate11, init_func=init1,frames=300, interval=20, blit=False)
 
 # save the animation as an mp4.  This requires ffmpeg or mencoder to be
 # installed.  The extra_args ensure that the x264 codec is used, so that
@@ -314,7 +312,7 @@ def animate21(i):
     return line2,
 
 # call the animator.  blit=True means only re-draw the parts that have changed.
-anim2 = animation.FuncAnimation(fig, animate21, init_func=init2,frames=200, interval=20, blit=False)
+anim2 = animation.FuncAnimation(fig, animate21, init_func=init2,frames=300, interval=20, blit=False)
 
 # save the animation as an mp4.  This requires ffmpeg or mencoder to be
 # installed.  The extra_args ensure that the x264 codec is used, so that
@@ -345,7 +343,7 @@ def animate12(i):
     return line3,
 
 # call the animator.  blit=True means only re-draw the parts that have changed.
-anim3 = animation.FuncAnimation(fig, animate12, init_func=init3,frames=200, interval=20, blit=False)
+anim3 = animation.FuncAnimation(fig, animate12, init_func=init3,frames=300, interval=20, blit=False)
 
 # save the animation as an mp4.  This requires ffmpeg or mencoder to be
 # installed.  The extra_args ensure that the x264 codec is used, so that
@@ -364,8 +362,6 @@ line4, = ax4.plot([], [], lw=2)
 def init4():
     line4.set_data([], [])
     return line4,
-
-
             
 # animation function.  This is called sequentially
 def animate22(i):
@@ -378,13 +374,53 @@ def animate22(i):
     return line4,
 
 # call the animator.  blit=True means only re-draw the parts that have changed.
-anim4 = animation.FuncAnimation(fig, animate22, init_func=init4,frames=200, interval=20, blit=False)
+anim4 = animation.FuncAnimation(fig, animate22, init_func=init4,frames=300, interval=20, blit=False)
 
 # save the animation as an mp4.  This requires ffmpeg or mencoder to be
 # installed.  The extra_args ensure that the x264 codec is used, so that
 # the video can be embedded in html5.  You may need to adjust this for
 # your system: for more information, see
 # http://matplotlib.sourceforge.net/api/animation_api.html
-fig.savefig('DTW.png', fps=30, extra_args=['-vcodec', 'libx264'])
 
 plt.show()
+
+#anim.save('DTW1.mp4', fps=60, extra_args=['-vcodec', 'libx264'])
+#anim2.save('DTW2.mp4', fps=60, extra_args=['-vcodec', 'libx264'])
+#anim3.save('DTW3.mp4', fps=60, extra_args=['-vcodec', 'libx264'])
+#anim4.save('DTW4.mp4', fps=60, extra_args=['-vcodec', 'libx264'])
+
+FFMpegWriter = animation.writers['ffmpeg'];
+metadata = dict(title='Movie Test', artist='Matplotlib',comment='Movie support!');
+writer = FFMpegWriter(fps=15, metadata=metadata);
+
+with writer.saving(fig, "DTW.mp4", 300):
+    for i in range(300):
+        x = np.linspace(0, len(traj11)-1, len(traj11));
+        y = traj11;
+        oi = traj11[0];
+        traj11.remove(oi);
+        traj11.append(oi);
+        line.set_data(x, y);
+    
+        x = np.linspace(0, len(traj21)-1, len(traj21));
+        y = traj21;
+        oi = traj21[0];
+        traj21.remove(oi);
+        traj21.append(oi);
+        line2.set_data(x, y);
+    
+        x = np.linspace(0, len(traj12)-1, len(traj12));
+        y = traj12;
+        oi = traj12[0];
+        traj12.remove(oi);
+        traj12.append(oi);
+        line3.set_data(x, y);
+    
+        x = np.linspace(0, len(traj22)-1, len(traj22));
+        y = traj22;
+        oi = traj22[0];
+        traj22.remove(oi);
+        traj22.append(oi);
+        line4.set_data(x, y);
+    
+        writer.grab_frame()
