@@ -14,7 +14,6 @@ import numpy as np
 '''Méthode DTW avec recalage des trajectoires générées.'''
 
 
-
 def distance(a,b):
     '''
     Calcule la distance entre deux points a et b de coordonnés (x,y)
@@ -228,7 +227,7 @@ def main():
             traj1y.append(y)
             
     #import la trajectoire aleatoire 
-    with open ("alt.csv","r") as csvfile:
+    with open ("alt-2_fois-AD-SB.csv","r") as csvfile:
         traj2_file=csv.reader(csvfile)
         traj2=[]
         for row in traj2_file:
@@ -251,19 +250,22 @@ def main():
         traj21.append(traj2x[x[1]])
         traj12.append(traj1y[x[0]])
         traj22.append(traj2y[x[1]])    
-    
+            
 main()
 
 # First set up the figure, the axis, and the plot element we want to animate
 fig = plt.figure()   
 ax1 = fig.add_subplot(2, 2, 1)
-ax2 = fig.add_subplot(2, 2, 2)
-ax3 = fig.add_subplot(2, 2, 3)
+ax2 = fig.add_subplot(2, 2, 3)
+ax3 = fig.add_subplot(2, 2, 2)
 ax4 = fig.add_subplot(2, 2, 4)
 
 ax1.set_xlim(0,50)
+ax1.axes.get_xaxis().set_visible(False)
+ax1.set_title('Axe X Trajectoire reference')
 ax1.set_ylim(min(traj21)-5, max(traj21)+5)
 line, = ax1.plot([], [], lw=2)
+ax1.plot([25,25],[min(traj21)-5,max(traj21)+5],'r')
 
 # initialization function: plot the background of each frame
 def init1():
@@ -292,9 +294,12 @@ anim = animation.FuncAnimation(fig, animate11, init_func=init1,frames=300, inter
 
 plt.show()
 
-ax3.set_xlim(0,50)
-ax3.set_ylim(min(traj21)-5, max(traj21)+5)
-line2, = ax3.plot([], [], lw=2)
+ax2.set_xlim(0,50)
+ax2.axes.get_xaxis().set_visible(False)
+ax2.set_title('Axe X Trajectoire aleatoire')
+ax2.set_ylim(min(traj21)-5, max(traj21)+5)
+line2, = ax2.plot([], [], lw=2)
+ax2.plot([25,25],[min(traj21)-5,max(traj21)+5],'r')
 
 # initialization function: plot the background of each frame
 def init2():
@@ -323,9 +328,12 @@ anim2 = animation.FuncAnimation(fig, animate21, init_func=init2,frames=300, inte
 
 plt.show()
 
-ax2.set_xlim(0,50)
-ax2.set_ylim(min(traj22)-5, max(traj22)+5)
-line3, = ax2.plot([], [], lw=2)
+ax3.set_xlim(0,50)
+ax3.axes.get_xaxis().set_visible(False)
+ax3.set_title('Axe Y Trajectoire reference')
+ax3.set_ylim(min(traj22)-5, max(traj22)+5)
+line3, = ax3.plot([], [], lw=2)
+ax3.plot([25,25],[min(traj22)-5,max(traj22)+5],'r')
 
 # initialization function: plot the background of each frame
 def init3():
@@ -355,8 +363,11 @@ anim3 = animation.FuncAnimation(fig, animate12, init_func=init3,frames=300, inte
 plt.show()
 
 ax4.set_xlim(0,50)
+ax4.axes.get_xaxis().set_visible(False)
+ax4.set_title('Axe Y Trajectoire aleatoire')
 ax4.set_ylim(min(traj22)-5, max(traj22)+5)
 line4, = ax4.plot([], [], lw=2)
+ax4.plot([25,25],[min(traj22)-5,max(traj22)+5],'r')
 
 # initialization function: plot the background of each frame
 def init4():
@@ -384,19 +395,14 @@ anim4 = animation.FuncAnimation(fig, animate22, init_func=init4,frames=300, inte
 
 plt.show()
 
-#anim.save('DTW1.mp4', fps=60, extra_args=['-vcodec', 'libx264'])
-#anim2.save('DTW2.mp4', fps=60, extra_args=['-vcodec', 'libx264'])
-#anim3.save('DTW3.mp4', fps=60, extra_args=['-vcodec', 'libx264'])
-#anim4.save('DTW4.mp4', fps=60, extra_args=['-vcodec', 'libx264'])
-
 FFMpegWriter = animation.writers['ffmpeg'];
-metadata = dict(title='Movie Test', artist='Matplotlib',comment='Movie support!');
-writer = FFMpegWriter(fps=15, metadata=metadata);
+metadata = dict(title='DTW', artist='PAr 146',comment='Demonstration DTW');
+writer = FFMpegWriter(fps=50, metadata=metadata);
 
-with writer.saving(fig, "DTW.mp4", 300):
+with writer.saving(fig, "DTW-2_fois-AD-SB.mp4", 300):
     for i in range(300):
         x = np.linspace(0, len(traj11)-1, len(traj11));
-        y = traj11;
+        y = traj11; 
         oi = traj11[0];
         traj11.remove(oi);
         traj11.append(oi);

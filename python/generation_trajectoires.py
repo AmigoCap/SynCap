@@ -95,7 +95,7 @@ def main():
     export("ref",ref)
      
     
-    with open("essai1.csv","w",newline="") as f:
+    with open("alt.csv","w",newline="") as f:
         writer = csv.writer(f)
         for i in range(2*c+2*d-4):
             writer.writerow([(rntx[i])]+[(rnty[i])])

@@ -18,14 +18,17 @@ def fonction_ref(k,N):
 
 def fonction_aleat(k,N,axe,brt):
     f = fonction_ref(k,N)
+    #Decalage
+    f[0] = f[0]-12.5;
+    f[1] = f[1]-25;
     al = aleatoire(axe)
     b = bruit(brt,len(axe))
     if type(f)==list:
         point=[]
         for i in range(len(axe)):
-            point.append(f[i]+al[i]+b[i])
+            point.append(2*f[i]+al[i]+b[i])
     else:
-        point=f+al[0]+b
+        point=2*f+al[0]+b
     return point
     
 
@@ -81,28 +84,30 @@ def bruit(choix,dim):
             '''
             Bruit Gaussien
             '''
-            sigma = 3.0;
-            U1 = random.random();
-            U2 = random.random();
-            b1 = sigma*math.sqrt(-2*math.log(U1))*math.cos(2*math.pi*U2) ;
-            
-            U1 = random.random();
-            U2 = random.random();
-            b2 = sigma*math.sqrt(-2*math.log(U1))*math.cos(2*math.pi*U2) ;
-            return [b1,b2];
+# =============================================================================
+#             sigma = 3.0;
+#             U1 = random.random();
+#             U2 = random.random();
+#             b1 = sigma*math.sqrt(-2*math.log(U1))*math.cos(2*math.pi*U2) ;
+#             
+#             U1 = random.random();
+#             U2 = random.random();
+#             b2 = sigma*math.sqrt(-2*math.log(U1))*math.cos(2*math.pi*U2) ;
+#             return [b1,b2];
+# =============================================================================
             
             '''
             Bruit Impulsif
             '''            
-#            prob = random.randint(1,100);
-#            if prob>90:
-#                nmax = random.randint(30,50);
-#                nmin = random.randint(-50,-30);
-#                return [int(random.randint(nmin,nmax)),int(random.randint(nmin,nmax))];
-#            else:
-#                return [0,0];
-#        else:
-#            return 0;
+            prob = random.randint(1,100);
+            if prob>90:
+                nmax = random.randint(30,50);
+                nmin = random.randint(-50,-30);
+                return [int(random.randint(nmin,nmax)),int(random.randint(nmin,nmax))];
+            else:
+                return [0,0];
+        else:
+            return 0;
 
 def export(nom,trajectoire):
     '''
@@ -159,12 +164,11 @@ def main():
     axes=["x","y"]
     ref=traj_reference(200)
     bruit=True;
-    print(ref)
     alt=traj_aleatoire(100,bruit,axes)
     graphique(ref)
     graphique(alt)
     export("ref",ref)
-    export("alt",alt)
+    export("alt-2_fois-AD-BI",alt)
 
 
 
