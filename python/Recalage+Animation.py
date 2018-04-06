@@ -215,7 +215,7 @@ traj2y = []
 def main():
     
     #import la trajectoire de réference
-    with open ("ref.csv","r") as csvfile:
+    with open ("MoCap_Carre.csv","r") as csvfile:
         traj1_file=csv.reader(csvfile)
         traj1=[]
         for row in traj1_file:
@@ -227,7 +227,7 @@ def main():
             traj1y.append(y)
             
     #import la trajectoire aleatoire 
-    with open ("alt-2_fois-AD-SB.csv","r") as csvfile:
+    with open ("Accelerometre_Carre.csv","r") as csvfile:
         traj2_file=csv.reader(csvfile)
         traj2=[]
         for row in traj2_file:
@@ -262,10 +262,10 @@ ax4 = fig.add_subplot(2, 2, 4)
 
 ax1.set_xlim(0,50)
 ax1.axes.get_xaxis().set_visible(False)
-ax1.set_title('Axe X Trajectoire reference')
-ax1.set_ylim(min(traj21)-5, max(traj21)+5)
+ax1.set_title('Axe X MoCap')
+ax1.set_ylim(min(traj11)-5, max(traj11)+5)
 line, = ax1.plot([], [], lw=2)
-ax1.plot([25,25],[min(traj21)-5,max(traj21)+5],'r')
+ax1.plot([25,25],[min(traj11)-5,max(traj11)+5],'r')
 
 # initialization function: plot the background of each frame
 def init1():
@@ -283,7 +283,7 @@ def animate11(i):
     return line,
 
 # call the animator.  blit=True means only re-draw the parts that have changed.
-anim = animation.FuncAnimation(fig, animate11, init_func=init1,frames=300, interval=20, blit=False)
+anim = animation.FuncAnimation(fig, animate11, init_func=init1,frames=4269, interval=20, blit=False)
 
 # save the animation as an mp4.  This requires ffmpeg or mencoder to be
 # installed.  The extra_args ensure that the x264 codec is used, so that
@@ -296,7 +296,7 @@ plt.show()
 
 ax2.set_xlim(0,50)
 ax2.axes.get_xaxis().set_visible(False)
-ax2.set_title('Axe X Trajectoire aleatoire')
+ax2.set_title('Axe X Accelerometre')
 ax2.set_ylim(min(traj21)-5, max(traj21)+5)
 line2, = ax2.plot([], [], lw=2)
 ax2.plot([25,25],[min(traj21)-5,max(traj21)+5],'r')
@@ -317,7 +317,7 @@ def animate21(i):
     return line2,
 
 # call the animator.  blit=True means only re-draw the parts that have changed.
-anim2 = animation.FuncAnimation(fig, animate21, init_func=init2,frames=300, interval=20, blit=False)
+anim2 = animation.FuncAnimation(fig, animate21, init_func=init2,frames=4269, interval=20, blit=False)
 
 # save the animation as an mp4.  This requires ffmpeg or mencoder to be
 # installed.  The extra_args ensure that the x264 codec is used, so that
@@ -330,10 +330,10 @@ plt.show()
 
 ax3.set_xlim(0,50)
 ax3.axes.get_xaxis().set_visible(False)
-ax3.set_title('Axe Y Trajectoire reference')
-ax3.set_ylim(min(traj22)-5, max(traj22)+5)
+ax3.set_title('Axe Y MoCap')
+ax3.set_ylim(min(traj12)-5, max(traj12)+5)
 line3, = ax3.plot([], [], lw=2)
-ax3.plot([25,25],[min(traj22)-5,max(traj22)+5],'r')
+ax3.plot([25,25],[min(traj12)-5,max(traj12)+5],'r')
 
 # initialization function: plot the background of each frame
 def init3():
@@ -351,7 +351,7 @@ def animate12(i):
     return line3,
 
 # call the animator.  blit=True means only re-draw the parts that have changed.
-anim3 = animation.FuncAnimation(fig, animate12, init_func=init3,frames=300, interval=20, blit=False)
+anim3 = animation.FuncAnimation(fig, animate12, init_func=init3,frames=4269, interval=20, blit=False)
 
 # save the animation as an mp4.  This requires ffmpeg or mencoder to be
 # installed.  The extra_args ensure that the x264 codec is used, so that
@@ -364,7 +364,7 @@ plt.show()
 
 ax4.set_xlim(0,50)
 ax4.axes.get_xaxis().set_visible(False)
-ax4.set_title('Axe Y Trajectoire aleatoire')
+ax4.set_title('Axe Y Accelerometre')
 ax4.set_ylim(min(traj22)-5, max(traj22)+5)
 line4, = ax4.plot([], [], lw=2)
 ax4.plot([25,25],[min(traj22)-5,max(traj22)+5],'r')
@@ -385,7 +385,7 @@ def animate22(i):
     return line4,
 
 # call the animator.  blit=True means only re-draw the parts that have changed.
-anim4 = animation.FuncAnimation(fig, animate22, init_func=init4,frames=300, interval=20, blit=False)
+anim4 = animation.FuncAnimation(fig, animate22, init_func=init4,frames=4269, interval=20, blit=False)
 
 # save the animation as an mp4.  This requires ffmpeg or mencoder to be
 # installed.  The extra_args ensure that the x264 codec is used, so that
@@ -395,12 +395,13 @@ anim4 = animation.FuncAnimation(fig, animate22, init_func=init4,frames=300, inte
 
 plt.show()
 
+
 FFMpegWriter = animation.writers['ffmpeg'];
 metadata = dict(title='DTW', artist='PAr 146',comment='Demonstration DTW');
-writer = FFMpegWriter(fps=50, metadata=metadata);
-
-with writer.saving(fig, "DTW-2_fois-AD-SB.mp4", 300):
-    for i in range(300):
+writer = FFMpegWriter(fps=500, metadata=metadata);
+ 
+with writer.saving(fig, "DTW-MoCap_Accelerometre-Carre.mp4",300):
+    for i in range(4269):
         x = np.linspace(0, len(traj11)-1, len(traj11));
         y = traj11; 
         oi = traj11[0];
@@ -428,5 +429,6 @@ with writer.saving(fig, "DTW-2_fois-AD-SB.mp4", 300):
         traj22.remove(oi);
         traj22.append(oi);
         line4.set_data(x, y);
-    
+     
         writer.grab_frame()
+
