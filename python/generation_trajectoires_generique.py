@@ -5,6 +5,9 @@ import csv
 import math
 import random
 import matplotlib.pyplot as plt
+import numpy as np
+from mpl_toolkits import mplot3d
+
 
 def fonction_ref(k,N):
     '''
@@ -12,9 +15,10 @@ def fonction_ref(k,N):
     de x pour réaliser le calcul
     A changer selon la trajectoire souhaité
     '''
-    #return math.sin(k/N*math.pi*3)*10
-    return rectangle(50,100,k,N)
-    #on veut dessiner un rectangle 
+    #return rectangle(50,100,k,N) #on veut dessiner un rectangle 
+    #return ([k**5 - k**3/2-3,2*np.pi*k**2,10]) #pour simuler une traj polynomiale du mocap
+    return ([20*k**2-3*(k), 3*2*2*np.pi,-9.81]) #pour simuler un accelerometre correspondant à la traj mocap ci-dessus
+
 
 def fonction_aleat(k,N,axe,brt):
     f = fonction_ref(k,N)
@@ -28,7 +32,8 @@ def fonction_aleat(k,N,axe,brt):
         for i in range(len(axe)):
             point.append(2*f[i]+al[i]+b[i])
     else:
-        point=2*f+al[0]+b
+        #point=2*f+al[0]+b
+        point=f+al[0]+b[0]
     return point
     
 
@@ -38,8 +43,8 @@ def traj_reference(N):
     une liste avec les valeurs générées
     '''
     y = [] #création d'une liste vide pour la trajectoire
-    
-    for i in range(N):
+    t = np.linspace(0,1,N)
+    for i in t:
         y.append(fonction_ref(i,N))
    
     return y
@@ -50,9 +55,10 @@ def traj_aleatoire(N,brt,axes):
     une liste avec les valeurs générées
     '''
     y = [] #création d'une liste vide pour la trajectoire
-
     
-    for i in range(N):
+    t = np.linspace(0,1,N)
+    
+    for i in t:
         y.append(fonction_aleat(i,N,axes,brt))
     return(y)    
 
@@ -64,21 +70,24 @@ def aleatoire(axe):
     aleat=[]
     for i in axe:
         if i=="x":
-            aleat.append (random.uniform(-5, 5))
+            #aleat.append(np.random.normal(0.0003863,0.0002474)) #mocap
+            aleat.append(np.random.normal(-0.06,0.02))
         elif i=="y":
-            aleat.append (random.uniform(-5, 5))
+            #aleat.append(np.random.normal(0.0003863,0.0002474)) #mocap
+            aleat.append(np.random.normal(-0.08,0.02))
         elif i=="z":
-            aleat.append (random.uniform(-5, 5))
+            #aleat.append(np.random.normal(0.0003863,0.0002474)) #mocap
+            aleat.append(np.random.normal(0.03,0.03))
         else : 
             aleat.append(0)
     return(aleat)
 
 def bruit(choix,dim):
+    bruit_dim=[]
     if not choix:
-        if dim==2: 
-            return [0,0];
-        else:
-            return 0;           
+        for i in range(dim):
+            bruit_dim.append(0)
+        return (bruit_dim)
     else:
         if dim==2: 
             '''
@@ -150,25 +159,41 @@ def graphique(traj):
     if type(traj[0])!=list:
         x=traj
         y=list(range(0,len(traj)))
+        plt.scatter(x,y)
+
     elif len(traj[0])==2:
         x=[]
         y=[]
         for i in traj:
             x.append(i[0])
             y.append(i[1])
-    plt.scatter(x,y)
-            
+        plt.scatter(x,y)
+    elif len(traj[0])==3:
+        x=[]
+        y=[]
+        z=[]
+        for i in traj:
+            x.append(i[0])
+            y.append(i[1])
+            z.append(i[2])
+        fig = plt.figure()
+        ax = plt.axes(projection='3d')
+        ax.scatter3D(x, y, z, cmap='Greens')
+        
 
 
 def main():  
-    axes=["x","y"]
+    dim=3
+    axes=["x","y","z"]
     ref=traj_reference(200)
-    bruit=True;
-    alt=traj_aleatoire(100,bruit,axes)
+
+    bruit=False;
+    print(ref)
+    alt=traj_aleatoire(200,bruit,axes)
     graphique(ref)
     graphique(alt)
-    export("ref",ref)
-    export("alt-2_fois-AD-BI",alt)
+    #export("ref",ref)
+    export("Accelerometer_3D_polynomial_200",alt)
 
 
 

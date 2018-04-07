@@ -1,10 +1,11 @@
-'''Méthode DTW avec recalage des trajectoires générées.'''
+'''Méthode DTW 3D avec recalage des trajectoires générées.'''
 
 import csv
 import math 
 import matplotlib.pyplot as plt
 import matplotlib as mtp
 import numpy as np
+
 
 def distance(a,b):
     '''
@@ -199,29 +200,31 @@ def draw_traj_rec(traj1,traj2,P):
 def main():
     
     #import la trajectoire de réference
-    with open ("trajectoires_generees/02_dtw_bruit_gauss_ref.csv","r") as csvfile:
+    with open ("trajectoires_generees/03_MoCap_3D_polynomial.csv","r") as csvfile:
         traj1_file=csv.reader(csvfile)
         traj1=[]
         for row in traj1_file:
             x=float(row[0])
             y=float(row[1])
-            traj1.append([x,y])
+            z=float(row[2])
+            traj1.append([x,y,z])
             
     #import la trajectoire aleatoire 
-    with open ("trajectoires_generees/02_dtw_bruit_gauss_alt.csv","r") as csvfile:
+    with open ("trajectoires_generees/04_Accelerometer_3D_polynomial_200.csv","r") as csvfile:
         traj2_file=csv.reader(csvfile)
         traj2=[]
         for row in traj2_file:
             x=float(row[0])
             y=float(row[1])
-            traj2.append([x,y])
+            z=float(row[2])
+            traj2.append([x,y,z])
     
     cout,P,distances = dtw(traj1,traj2)
     print(len(P))
     Pgrid=numerical_grid(P)
     draw_grid(Pgrid)
     print('J =',cout)
-    draw_traj_rec(traj1,traj2,P)
+    #draw_traj_rec(traj1,traj2,P)
     
     
 main()
