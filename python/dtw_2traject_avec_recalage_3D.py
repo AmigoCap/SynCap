@@ -152,6 +152,9 @@ def draw_grid(Pgrid):
     #ax.grid(color='k',linestyle='-',linewidth=2)
     
     plt.imshow(matrix,interpolation='none',cmap=my_cmap)
+    plt.xlabel('trajectoire MoCap référence',verticalalignment='top')
+    ax.xaxis.set_ticks_position("bottom")
+    plt.ylabel('trajectoire MoCap simulée')
     plt.show
     
 def draw_traj_rec(traj1,traj2,P):
@@ -198,9 +201,9 @@ def draw_traj_rec(traj1,traj2,P):
         
     
 def main():
-    
+    start = time.time() 
     #import la trajectoire de réference
-    with open ("trajectoires_generees/03_MoCap_3D_polynomial.csv","r") as csvfile:
+    with open ("trajectoires_generees/03_MoCap_3D_polynomial_ref_500.csv","r") as csvfile:
         traj1_file=csv.reader(csvfile)
         traj1=[]
         for row in traj1_file:
@@ -210,7 +213,7 @@ def main():
             traj1.append([x,y,z])
             
     #import la trajectoire aleatoire 
-    with open ("trajectoires_generees/04_Accelerometer_3D_polynomial_200.csv","r") as csvfile:
+    with open ("trajectoires_generees/03_MoCap_3D_polynomial_350.csv","r") as csvfile:
         traj2_file=csv.reader(csvfile)
         traj2=[]
         for row in traj2_file:
@@ -220,6 +223,8 @@ def main():
             traj2.append([x,y,z])
     
     cout,P,distances = dtw(traj1,traj2)
+    end = time.time()
+    print(end - start)
     print(len(P))
     Pgrid=numerical_grid(P)
     draw_grid(Pgrid)

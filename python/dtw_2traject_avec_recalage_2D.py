@@ -5,6 +5,7 @@ import math
 import matplotlib.pyplot as plt
 import matplotlib as mtp
 import numpy as np
+import time
 
 def distance(a,b):
     '''
@@ -143,14 +144,17 @@ def draw_grid(Pgrid):
 
     my_cmap = mtp.colors.ListedColormap(['k','w'])
     
-    fig = plt.figure()
+    fig = plt.figure(figsize=(15, 6))
     ax=fig.add_subplot(1,1,1)
     ax.set_aspect(20)
     ax.xaxis.tick_top()
     
     #ax.grid(color='k',linestyle='-',linewidth=2)
-    
+
     plt.imshow(matrix,interpolation='none',cmap=my_cmap)
+    plt.xlabel('Trajectoire simulée (Accéléromètre)',verticalalignment='top')
+    ax.xaxis.set_ticks_position("bottom")
+    plt.ylabel('Trajectoire simulée (MoCap)')
     plt.show
     
 def draw_traj_rec(traj1,traj2,P):
@@ -183,7 +187,7 @@ def draw_traj_rec(traj1,traj2,P):
     for i in range(len(traj2)):
         xt2[i],yt2[i]=traj2[i]
     plt.plot(xt2,yt2,'ro-')
-            
+    '''      
     #Recalage des points en noir
     for i in range(len(P)):
           i1,i2=P[i]
@@ -191,15 +195,24 @@ def draw_traj_rec(traj1,traj2,P):
           x2,y2 = traj2[i2]
           plt.plot([x1,x2],[y1,y2],'k-')
           i=i+1;   
-    
     plt.show
-           
+    '''  
+    for i in range(len(P)):
+        i1,i2=P[i]
+        x1,y1 = traj1[i1]
+        x2,y2 = traj2[i2] 
         
+        if i1==6:
+              plt.plot([x1,x2],[y1,y2],'k-')
+              i=i+1;   
+    plt.show
+    
     
 def main():
     
+    start = time.time() 
     #import la trajectoire de réference
-    with open ("trajectoires_generees/03_MoCap_3D_polynomial.csv","r") as csvfile:
+    with open ("trajectoires_generees/04_Accelerometer_3D_polynomial_100.csv","r") as csvfile:
         traj1_file=csv.reader(csvfile)
         traj1=[]
         for row in traj1_file:
@@ -208,7 +221,7 @@ def main():
             traj1.append([x,y])
             
     #import la trajectoire aleatoire 
-    with open ("trajectoires_generees/04_Accelerometer_3D_polynomial_200.csv","r") as csvfile:
+    with open ("trajectoires_generees/03_MoCap_3D_polynomial_200.csv","r") as csvfile:
         traj2_file=csv.reader(csvfile)
         traj2=[]
         for row in traj2_file:
@@ -217,10 +230,14 @@ def main():
             traj2.append([x,y])
     
     cout,P,distances = dtw(traj1,traj2)
-    print(len(P))
+    
+    end = time.time()
+    print(end - start)
+    print(P)
     Pgrid=numerical_grid(P)
     draw_grid(Pgrid)
     print('J =',cout)
+    print('m =',len(P))
     draw_traj_rec(traj1,traj2,P)
     
     
