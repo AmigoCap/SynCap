@@ -431,4 +431,3 @@ with writer.saving(fig, "DTW-MoCap_Accelerometre-Carre.mp4",300):
         line4.set_data(x, y);
      
         writer.grab_frame()
-
